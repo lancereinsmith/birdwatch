@@ -3,10 +3,14 @@ name = "birdwatch"
 version = "0.1.0"
 description = "Bioacoustic bird identification: embedded (Raspberry Pi) and cloud backend components"
 readme = "README.md"
+license = { text = "MIT" }
 authors = [
     { name = "Lance Reinsmith", email = "info@k2rad.com" }
 ]
 requires-python = ">=3.12"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+]
 dependencies = [
     "numpy>=1.22,<2.4",  # numba 0.63 (Python 3.13) requires numpy<2.4
     "librosa>=0.11.0",
@@ -15,13 +19,12 @@ dependencies = [
     "awsiotsdk>=1.28.0",
 ]
 
-[project.optional-dependencies]
-# On Raspberry Pi: uv sync --extra pi (or pip install tflite-runtime there)
-# tflite-runtime has no wheels for Python 3.13; use 3.11 on Pi if needed.
-# pi = ["tflite-runtime>=2.14"]
-
 [project.scripts]
 birdwatch = "birdwatch:main"
+
+[project.urls]
+Documentation = "https://lancereinsmith.github.io/birdwatch/"
+Source = "https://github.com/lancereinsmith/birdwatch"
 
 [build-system]
 requires = ["hatchling"]
@@ -42,6 +45,9 @@ docs = [
     "mkdocs-material>=9.7.1",
     "mkdocstrings[python]>=0.26",
 ]
+# On Raspberry Pi: uv sync --extra pi (or pip install tflite-runtime there)
+# tflite-runtime has no wheels for Python 3.13; use 3.11 on Pi if needed.
+#pi = ["tflite-runtime>=2.14"]
 
 [tool.uv]
 default-groups = ["dev", "docs"]

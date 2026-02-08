@@ -6,7 +6,7 @@ Bioacoustic bird identification in two stages: a **mobile app** (iOS/Android) fo
 
 - **`src/birdwatch/`** — Python package for the Raspberry Pi (record → analyze → MQTT).
 - **`cloud/`** — AWS Amplify Gen 2 backend (Auth, Data, Storage, Lambda for IoT).
-- **`app/`** — Flutter mobile app (Stage 1).
+- **`app/`** — Flutter mobile app.
 
 ## Requirements
 
@@ -18,13 +18,7 @@ Bioacoustic bird identification in two stages: a **mobile app** (iOS/Android) fo
 
 ```bash
 uv sync
-uv sync --group dev --group docs
 ```
-
-- **Lint/format:** `uv run ruff check src tests && uv run ruff format src tests`
-- **Type check:** `uv run ty check`
-- **Tests:** `uv run pytest`
-- **Docs:** `uv run mkdocs serve`
 
 ## Embedded (Raspberry Pi)
 
@@ -33,7 +27,7 @@ uv sync --group dev --group docs
 3. Set AWS IoT env vars (endpoint, client id, cert/key paths).
 4. Run: `uv run birdwatch` or `python -m birdwatch.pi.main`.
 
-See [docs/embedded.md](docs/embedded.md) and [TODO.md](TODO.md).
+See [docs/embedded.md](docs/embedded.md)
 
 ## Cloud
 
