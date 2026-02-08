@@ -1,0 +1,55 @@
+site_name: Birdwatch
+site_description: Bioacoustic bird identification — embedded (Raspberry Pi) and cloud
+site_url: https://birdwatch.example.com
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+    - scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+nav:
+  - Home: index.md
+  - Plan: plan.md
+  - Embedded (Pi): embedded.md
+  - Cloud: cloud.md
+  - Mobile: mobile.md
+  - Model setup: model-setup.md
+  - Hardware: hardware.md
+  - Operational: operational.md
+  - Reference:
+      - TODO: reference/todo.md
+      - Full plan: reference/plan-full.md
+  - API:
+      - birdwatch: api/birdwatch.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_source: false
+            docstring_style: google
+markdown_extensions:
+  - pymdownx.snippets
+  - admonition

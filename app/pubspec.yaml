@@ -1,0 +1,34 @@
+name: birdwatch
+description: Bird identification app — real-time audio and sync with embedded nodes.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  amplify_flutter: ^2.0.0
+  amplify_api: ^2.0.0
+  amplify_datastore: ^2.0.0
+  amplify_auth_cognito: ^2.0.0
+  amplify_storage_s3: ^2.0.0
+  tflite_flutter: ^0.10.0
+  record: ^5.0.0
+  permission_handler: ^11.0.0
+  http: ^1.2.0
+  fftea: ^0.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+  # Place BirdNET TFLite model and labels in assets/
+  # - assets/BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite
+  # - assets/labels.txt

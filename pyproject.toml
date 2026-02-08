@@ -1,0 +1,94 @@
+[project]
+name = "birdwatch"
+version = "0.1.0"
+description = "Bioacoustic bird identification: embedded (Raspberry Pi) and cloud backend components"
+readme = "README.md"
+authors = [
+    { name = "Lance Reinsmith", email = "info@k2rad.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=1.22,<2.4",  # numba 0.63 (Python 3.13) requires numpy<2.4
+    "librosa>=0.11.0",
+    "numba>=0.63",  # Python 3.13; librosa pulls older numba otherwise
+    "sounddevice>=0.5.5",
+    "awsiotsdk>=1.28.0",
+]
+
+[project.optional-dependencies]
+# On Raspberry Pi: uv sync --extra pi (or pip install tflite-runtime there)
+# tflite-runtime has no wheels for Python 3.13; use 3.11 on Pi if needed.
+# pi = ["tflite-runtime>=2.14"]
+
+[project.scripts]
+birdwatch = "birdwatch:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/birdwatch"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.0",
+    "ty>=0.0.15",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.7.1",
+    "mkdocstrings[python]>=0.26",
+]
+
+[tool.uv]
+default-groups = ["dev", "docs"]
+
+# ——— Ruff: lint and format (replaces black, isort, flake8) ———
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]
+extend-ignore = ["B008"]  # Depends() in FastAPI route/dependency defaults is intentional
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# ——— ty: type checking (replaces mypy, pyright) ———
+[tool.ty.environment]
+python-version = "3.12"
+
+[tool.ty.src]
+exclude = ["tests"]
+
+# ——— rumdl: markdown format (mkdocs flavor) ———
+[tool.rumdl]
+flavor = "mkdocs"
+respect-gitignore = true
+disable = ["MD007","MD013", "MD031", "MD033", "MD036", "MD046", "MD053"]
+unfixable = ["MD007"]  # Prevent format from changing list indent (fix uses 3 spaces; we want 4)
+exclude = [".git", ".github", "node_modules", "vendor", "dist", "build", "CHANGELOG.md", "LICENSE.md"]
+
+[tool.rumdl.MD007]
+indent = 4  # Unordered list indentation: 4 spaces
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-v --tb=short"
+markers = [
+    "pi: marks tests that require Raspberry Pi (audio, TFLite, IoT); skip in CI",
+]
+
+[tool.coverage.run]
+source = ["src/birdwatch"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = ["pragma: no cover", "def __repr__", "raise NotImplementedError"]
