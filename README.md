@@ -45,8 +45,4 @@ From `app/`: `flutter pub get && flutter run`. Configure Amplify with generated 
 
 ## Documentation
 
-[MkDocs](https://www.mkdocs.org/) site: `uv run mkdocs serve`. Source under [docs/](docs/).
-
-## Plan and progress
-
-See [PLAN.md](PLAN.md) for the full technical plan and [TODO.md](TODO.md) for implementation status.
+See the [project documentation](https://lancereinsmith.github.io/birdwatch/) for full docs and API reference.
