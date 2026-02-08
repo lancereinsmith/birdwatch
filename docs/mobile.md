@@ -49,7 +49,7 @@ flutter run
 ```
 
 Select a device or simulator. The app currently shows a placeholder home
-screen; wiring to Amplify and inference is in progress (see [TODO](reference/todo.md)).
+screen; wiring to Amplify and inference is in progress.
 
 ## Backend configuration
 

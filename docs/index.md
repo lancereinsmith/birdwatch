@@ -67,5 +67,3 @@ Then:
   [Cloud](cloud.md) and `cloud/scripts/iot-setup.md`.
 - **Run the app:** From `app/`, run `flutter pub get && flutter run` (see
   [Mobile](mobile.md)).
-
-Progress and remaining work are tracked in [TODO](reference/todo.md).

@@ -1,7 +1,6 @@
 # Hardware (Raspberry Pi node)
 
-Bill of materials and assembly notes for the **Stage 2** embedded node,
-based on the full [plan](reference/plan-full.md).
+Bill of materials and assembly notes for the **Stage 2** embedded node.
 
 ## Core: Raspberry Pi Zero 2 W
 

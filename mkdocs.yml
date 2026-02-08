@@ -36,9 +36,6 @@ nav:
   - Model setup: model-setup.md
   - Hardware: hardware.md
   - Operational: operational.md
-  - Reference:
-      - TODO: reference/todo.md
-      - Full plan: reference/plan-full.md
   - API:
       - birdwatch: api/birdwatch.md
 plugins:

@@ -14,7 +14,7 @@ try:
 except ImportError:
     tflite = None
 
-# Match BirdNET training (PLAN.md §2.1.1)
+# Match BirdNET training (48 kHz, 3 s window, 96 mels; see plan-full.md §2.1.1)
 SAMPLE_RATE = 48_000
 N_FFT = 2048
 HOP_LENGTH = 278

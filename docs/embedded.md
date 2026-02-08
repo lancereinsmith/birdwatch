@@ -23,8 +23,7 @@ detections are cached locally and sent when connectivity returns.
 ### Optional: solar and battery
 
 For 24/7 outdoor use, the plan suggests a 25–35 W solar panel, 12 V 12 Ah
-LiFePO4 battery, MPPT controller, and 5 V buck for the Pi. See the full
-[Full plan](reference/plan-full.md) for energy calculations.
+LiFePO4 battery, MPPT controller, and 5 V buck for the Pi. 
 
 ## Software setup
 

@@ -1,7 +1,6 @@
 # Plan summary
 
-This page summarizes the Birdwatch architecture and roadmap. The full
-technical specification is in the repo as [Full plan](reference/plan-full.md).
+This page summarizes the Birdwatch architecture and roadmap.
 
 ## Why BirdNET and mel spectrograms
 
@@ -55,5 +54,3 @@ classifies it.
   (librosa + TFLite), MQTT client with offline cache.
 - **Phase 3 — Mobile:** Flutter app, audio capture, inference (isolate),
   DataStore observe, enrichment APIs (Wikipedia, eBird).
-
-Current status: see [TODO](reference/todo.md).

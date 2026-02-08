@@ -11,5 +11,5 @@ def main() -> None:
 
         sys.exit(main_pi())
     print("Usage: set BIRDNET_MODEL_DIR (and AWS IoT env) then run birdwatch")
-    print("See docs/embedded.md and TODO.md")
+    print("See docs/embedded.md")
     sys.exit(0)
