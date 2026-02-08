@@ -27,29 +27,19 @@ of Ornithology, with **AWS Amplify Gen 2** for sync and **eBird** /
 - **Node ≥18** — For Amplify backend (`cloud/`).
 - **Flutter SDK** — For the mobile app (`app/`).
 
-## Quick start (development)
+## Get started
 
-From the repo root:
-
-```bash
-uv sync
-uv sync --group dev --group docs
-```
-
-Then:
-
-- **Lint & format:** `uv run ruff check src tests && uv run ruff format src tests`
-- **Type check:** `uv run ty check`
-- **Tests:** `uv run pytest`
-- **Docs (local):** `uv run mkdocs serve` → open <http://127.0.0.1:8000>
+- **[Quickstart](quickstart.md)** — Install and run the Pi pipeline,
+  backend, or app in a few steps.
+- **[User guide](user-guide.md)** — How the Pi, cloud, and app fit
+  together and typical workflows.
 
 ## Documentation map
 
-- **[Plan](plan.md)** — Architecture summary, data flow, and roadmap.
-- **[Embedded (Pi)](embedded.md)** — Hardware, setup, env vars, and running
-  the Pi pipeline.
-- **[Cloud](cloud.md)** — Amplify backend, Detection schema, IoT setup, and
-  Lambda.
+- **[Embedded (Pi)](embedded.md)** — Hardware, setup, env vars, and
+  running the Pi pipeline.
+- **[Cloud](cloud.md)** — Amplify backend, Detection schema, IoT setup,
+  and Lambda.
 - **[Mobile](mobile.md)** — Flutter app structure, audio/inference, and
   Amplify integration.
 - **[Model setup](model-setup.md)** — BirdNET TFLite model and labels
@@ -57,13 +47,11 @@ Then:
 - **[Hardware](hardware.md)** — BOM and assembly notes for the Pi node.
 - **[Operational](operational.md)** — eBird API key, privacy/legal notes.
 - **[API](api/birdwatch.md)** — Python API (mkdocstrings).
+- **[Plan](plan.md)** — Architecture summary, data flow, and roadmap.
 
-## Where to start
+## Development
 
-- **Run the Pi pipeline locally (no hardware):** Install deps, obtain the
-  BirdNET TFLite model and labels, set `BIRDNET_MODEL_DIR`; run
-  `uv run birdwatch` (see [Embedded](embedded.md)).
-- **Deploy the backend:** From `cloud/`, run `npx ampx sandbox` and follow
-  [Cloud](cloud.md) and `cloud/scripts/iot-setup.md`.
-- **Run the app:** From `app/`, run `flutter pub get && flutter run` (see
-  [Mobile](mobile.md)).
+From the repo root: `uv sync --group dev --group docs`. Then lint/format
+(`uv run ruff check src tests && uv run ruff format src tests`), type check
+(`uv run ty check`), tests (`uv run pytest`), and local docs
+(`uv run mkdocs serve` → <http://127.0.0.1:8000>).

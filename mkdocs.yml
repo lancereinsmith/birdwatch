@@ -29,15 +29,18 @@ theme:
     - content.code.annotate
 nav:
   - Home: index.md
-  - Plan: plan.md
-  - Embedded (Pi): embedded.md
+  - Quickstart: quickstart.md
+  - User guide: user-guide.md
+  - Embedded (Pi): 
+    - System: embedded.md
+    - Hardware: hardware.md
   - Cloud: cloud.md
   - Mobile: mobile.md
   - Model setup: model-setup.md
-  - Hardware: hardware.md
-  - Operational: operational.md
-  - API:
-      - birdwatch: api/birdwatch.md
+  - Notes: operational.md
+  - Development:
+    - API reference: api/birdwatch.md
+    - Plan: plan.md
 plugins:
   - search
   - mkdocstrings:
